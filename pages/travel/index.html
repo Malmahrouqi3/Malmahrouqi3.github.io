@@ -52,6 +52,10 @@
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
+  <style>
+  /* Emoji-capable font stack to improve flag rendering on desktop */
+  body { font-family: system-ui, -apple-system, "Segoe UI", "Inter", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; }
+  </style>
 </head>
 <body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
 
@@ -202,7 +206,7 @@
       exclude: ["AQ"]
     }));
     worldSeries.mapPolygons.template.setAll({ tooltipText: "{name}", interactive: true });
-    worldSeries.mapPolygons.template.states.create("hover", { fill: am5.color(0x678123) });
+    worldSeries.mapPolygons.template.states.create("hover", { fill: am5.color(0x2563EB) });
     var visitedCountries = ["US","AE","SA","CA","OM"];
     document.addEventListener("DOMContentLoaded", function() {
       var c = visitedCountries.length;
@@ -212,7 +216,7 @@
     worldSeries.events.on("datavalidated", function() {
       worldSeries.mapPolygons.each(function(polygon) {
         var id = polygon.dataItem.dataContext.id;
-        polygon.set("fill", am5.color(visitedCountries.includes(id) ? 0x3B8D86 : 0xE5E5E5));
+        polygon.set("fill", am5.color(visitedCountries.includes(id) ? 0x3B82F6 : 0xE5E7EB));
       });
     });
   });
@@ -234,7 +238,7 @@
       geoJSON: am5geodata_usaLow
     }));
     usaSeries.mapPolygons.template.setAll({ tooltipText: "{name}", interactive: true });
-    usaSeries.mapPolygons.template.states.create("hover", { fill: am5.color(0x678123) });
+    usaSeries.mapPolygons.template.states.create("hover", { fill: am5.color(0x2563EB) });
     var visitedStates = ["US-CA","US-MD","US-DC","US-CO","US-GA","US-MI","US-IL","US-NC","US-NY","US-PA","US-SC","US-TN","US-DE","US-VA"];
     document.addEventListener("DOMContentLoaded", function() {
       var s = visitedStates.length;
@@ -244,10 +248,20 @@
     usaSeries.events.on("datavalidated", function() {
       usaSeries.mapPolygons.each(function(polygon) {
         var id = polygon.dataItem.dataContext.id;
-        polygon.set("fill", am5.color(visitedStates.includes(id) ? 0x3B8D86 : 0xE5E5E5));
+        polygon.set("fill", am5.color(visitedStates.includes(id) ? 0x3B82F6 : 0xE5E7EB));
       });
     });
   });
+  </script>
+
+  <!-- Twemoji for consistent emoji rendering across platforms -->
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.twemoji) {
+        twemoji.parse(document.body, { folder: "svg", ext: ".svg" });
+      }
+    });
   </script>
 </body>
 </html>
