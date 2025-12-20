@@ -24,7 +24,9 @@ jobs:
 
       - name: Run HTMLHint
         run: find . -name "*.html" -not -path "./node_modules/*" -type f;
+             echo ""
              find . -name "*.html" -not -path "./node_modules/*" -type f -exec npx htmlhint {} \;
+             echo ""
              find . -name "*.html" -not -path "./node_modules/*" -type f | xargs npx htmlhint --format sarif > htmlhint.sarif || true;
 
       - name: Upload SARIF file
