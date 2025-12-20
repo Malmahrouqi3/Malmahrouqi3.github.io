@@ -1,10 +1,13 @@
 name: HTMLHint (SARIF) Code Scanning
 
 on:
+  push:
   pull_request:
-    branches:
-      - main
   workflow_dispatch:
+
+permissions:
+  security-events: read
+  contents: read
 
 jobs:
   build:
