@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  security-events: read
+  actions: read
   contents: read
+  security-events: write
 
 jobs:
   build:
