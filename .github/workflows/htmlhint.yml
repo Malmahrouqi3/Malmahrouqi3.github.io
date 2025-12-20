@@ -17,16 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          persist-credentials: false
-
+          path: main
+    
       - name: Set up Node.js
         uses: actions/setup-node@v6
 
       - name: Run HTMLHint
-        run:
-            find . -name "*.html" -not -path "./node_modules/*" -type f
-            find . -name "*.html" -not -path "./node_modules/*" -type f -exec npx htmlhint {} \;
-            find . -name "*.html" -not -path "./node_modules/*" -type f | xargs npx htmlhint --format sarif > htmlhint.sarif || true
+        run: find main -name "*.html" -not -path "./node_modules/*" -type f
+             find main -name "*.html" -not -path "./node_modules/*" -type f -exec npx htmlhint {} \;
+             find main -name "*.html" -not -path "./node_modules/*" -type f | xargs npx htmlhint --format sarif > htmlhint.sarif || true
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v4
