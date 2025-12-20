@@ -23,9 +23,9 @@ jobs:
         uses: actions/setup-node@v6
 
       - name: Run HTMLHint
-        run: find main -name "*.html" -not -path "./node_modules/*" -type f
-             find main -name "*.html" -not -path "./node_modules/*" -type f -exec npx htmlhint {} \;
-             find main -name "*.html" -not -path "./node_modules/*" -type f | xargs npx htmlhint --format sarif > htmlhint.sarif || true
+        run: find . -name "*.html" -not -path "./node_modules/*" -type f;
+             find . -name "*.html" -not -path "./node_modules/*" -type f -exec npx htmlhint {} \;
+             find . -name "*.html" -not -path "./node_modules/*" -type f | xargs npx htmlhint --format sarif > htmlhint.sarif || true;
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v4
