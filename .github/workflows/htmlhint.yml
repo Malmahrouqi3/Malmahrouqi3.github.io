@@ -1,4 +1,4 @@
-name: HTMLHint (SARIF) Code Scanning
+name: HTMLHint Code Scanning
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v6
         with:
           persist-credentials: false
@@ -21,14 +21,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
 
-      - name: Run HTMLHint (SARIF)
-        run: npx htmlhint . --format sarif || true
-             mkdir -p website
-             npx htmlhint . --format sarif > website/htmlhint.sarif || true
+      - name: Run HTMLHint
+        run: npx htmlhint . --format sarif > htmlhint.sarif || true
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v4
         with:
-          sarif_file: website/htmlhint.sarif
+          sarif_file: ./htmlhint.sarif
           category: HTMLHint
         if: always()
