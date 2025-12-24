@@ -1,4 +1,4 @@
-name: prettier
+name: autofix.ci
 on:
   pull_request:
   push:
@@ -13,10 +13,10 @@ jobs:
       - run: npm ci
       - run: npx prettier --write "**/*.{html,css,js,md}"
       
-      - name: spelling
-        run: 
-          npm install -g cspell
-          cspell "**/*.{html,css,js,md}" --no-progress
+      - name: Install cspell
+        run: npm install -g cspell
+      - name: Spell check code files
+        run: cspell "**/*.{html,css,js,md}" --no-progress
 
       - uses: autofix-ci/action@v1
         with:
