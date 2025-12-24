@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cspell-lib": "^9.4.0",
+    "lts": "^2.0.0"
+  }
+}

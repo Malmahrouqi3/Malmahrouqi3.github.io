@@ -11,7 +11,13 @@ jobs:
       - uses: actions/setup-node@v6
 
       - run: npm ci
-      - run: npx prettier --write "**/*.{html,css,js}"
+      - run: npx prettier --write "**/*.{html,css,js,md}"
+      
+      - name: spelling
+        run: 
+          npm install -g cspell
+          cspell "**/*.{html,css,js,md}" --no-progress
+
       - uses: autofix-ci/action@v1
         with:
           commit-message: "Apply Prettier format"
