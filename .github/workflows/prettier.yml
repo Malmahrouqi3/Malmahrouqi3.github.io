@@ -6,8 +6,10 @@ on:
       - '**/*.js'
       - '**/*.html'
       - '!**/.github/**'
-      
-permissions: {}
+
+permissions:      
+  contents: write
+
 jobs:
   prettier:
     runs-on: ubuntu-latest
