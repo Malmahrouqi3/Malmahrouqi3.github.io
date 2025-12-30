@@ -12,6 +12,8 @@ class ThreeJSViewer {
 
     this.models = [];
     this.currentModelIndex = 0;
+    this.animationFrameId = null;
+    this.onWindowResize = this.onWindowResize.bind(this);
     this.init();
   }
 
@@ -53,7 +55,7 @@ class ThreeJSViewer {
     this.controls.enableZoom = true;
     this.controls.autoRotate = false;
 
-    window.addEventListener("resize", () => this.onWindowResize(), false);
+    window.addEventListener("resize", this.onWindowResize, false);
 
     console.log(
       "ThreeJSViewer initialized with camera at",
@@ -137,7 +139,7 @@ class ThreeJSViewer {
   }
 
   animate() {
-    requestAnimationFrame(() => this.animate());
+    this.animationFrameId = requestAnimationFrame(() => this.animate());
     this.controls.update();
     this.renderer.render(this.scene, this.camera);
   }
@@ -176,6 +178,58 @@ class ThreeJSViewer {
 
   toggleAutoRotate() {
     this.controls.autoRotate = !this.controls.autoRotate;
+  }
+
+  destroy() {
+    window.removeEventListener("resize", this.onWindowResize);
+    if (this.animationFrameId !== null) {
+      cancelAnimationFrame(this.animationFrameId);
+      this.animationFrameId = null;
+    }
+
+    if (this.controls) {
+      this.controls.dispose();
+      this.controls = null;
+    }
+
+    if (this.renderer) {
+      this.renderer.dispose();
+      if (this.renderer.domElement && this.renderer.domElement.parentNode) {
+        this.renderer.domElement.parentNode.removeChild(
+          this.renderer.domElement,
+        );
+      }
+      this.renderer = null;
+    }
+
+    if (this.scene) {
+      this.scene.traverse((object) => {
+        if (object.geometry) {
+          object.geometry.dispose();
+        }
+
+        if (object.material) {
+          if (Array.isArray(object.material)) {
+            object.material.forEach((mat) => {
+              if (mat && typeof mat.dispose === "function") {
+                mat.dispose();
+              }
+            });
+          } else if (typeof object.material.dispose === "function") {
+            object.material.dispose();
+          }
+        }
+      });
+      this.scene = null;
+    }
+
+    this.container = null;
+    this.camera = null;
+    this.currentObject = null;
+    this.models = null;
+    this.onWindowResize = null;
+
+    console.log("ThreeJSViewer destroyed and resources cleaned up");
   }
 }
 
