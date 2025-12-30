@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       path: "./power.obj",
-      color: 0x4ecdc4,
+      color: 0xa3e289,
       name: "Power Series Nosecone",
     },
   ];
