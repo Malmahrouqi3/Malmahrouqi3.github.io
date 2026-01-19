@@ -130,6 +130,11 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer@4.0.0/dist/model-viewer.min.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       html.dark {
         background-color: #1f2020 !important;
@@ -393,6 +398,18 @@
                       "
                     >
                       <strong> RocketPy — Contributor </strong>
+                      <span
+                        style="
+                          display: inline-block;
+                          background-color: #23a369;
+                          color: white;
+                          padding: 0.25em 0.5em;
+                          border-radius: 0.25em;
+                          font-size: 0.85em;
+                          margin-right: 0.5em;
+                        "
+                        >Ongoing</span
+                      >
                     </div>
                     <div style="margin: 0.2em 10 0 0; padding: 0">
                       <strong>
@@ -410,9 +427,7 @@
                       "
                     >
                       <strong> Concepts: </strong>
-                      GitHub CI, Monte Carlo, and more to come.
-                      <br />
-                      Joined recently in Dec 2025.
+                      GitHub CI, Monte Carlo, and Continuous/Discrete Control.
                     </blockquote>
                   </div>
                 </div>
@@ -436,6 +451,18 @@
                       <strong>
                         Geometric Flows — Computational Geometry
                       </strong>
+                      <span
+                        style="
+                          display: inline-block;
+                          background-color: #23a369;
+                          color: white;
+                          padding: 0.25em 0.5em;
+                          border-radius: 0.25em;
+                          font-size: 0.85em;
+                          margin-right: 0.5em;
+                        "
+                        >Ongoing</span
+                      >
                     </div>
                     <div style="margin: 0.2em 10 0 0; padding: 0">
                       <strong>
@@ -453,10 +480,162 @@
                       "
                     >
                       Investigating the Applicability of Differential Geometry
-                      Filters for Detecting and Smoothing Geometric
-                      Singularities in Computational Meshes. In Progress (ETA:
-                      Jan 30).
+                      Filters to Address Anomalies in Computational Meshes.
                     </blockquote>
+                    <div
+                      id="mesh-viewer"
+                      style="
+                        width: 70%;
+                        height: 300px;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        margin: 1.5em 0;
+                        position: relative;
+                        background: transparent;
+                      "
+                    >
+                      <div
+                        style="
+                          position: absolute;
+                          top: 10px;
+                          right: 10px;
+                          z-index: 10;
+                        "
+                      >
+                        <span
+                          style="
+                            background-color: rgba(179, 163, 105, 0.8);
+                            color: white;
+                            padding: 8px 12px;
+                            border-radius: 4px;
+                            font-size: 14px;
+                            font-weight: 600;
+                          "
+                        >
+                          Intake Mesh
+                        </span>
+                      </div>
+                      <div style="width: 100%; height: 100%">
+                        <model-viewer
+                          id="mesh-model-viewer"
+                          camera-controls
+                          ar-modes="webxr scene-viewer quick-look"
+                          environment-image="neutral"
+                          shadow-intensity="1"
+                          shadow-softness="0.4"
+                          exposure="1"
+                          style="
+                            width: 100%;
+                            height: 100%;
+                            --poster-color: transparent;
+                            background: transparent;
+                            display: block;
+                          "
+                        ></model-viewer>
+                      </div>
+                      <div
+                        style="
+                          position: absolute;
+                          bottom: 10px;
+                          left: 10px;
+                          right: 10px;
+                          z-index: 10;
+                          font-size: 12px;
+                          color: rgba(255, 255, 255, 0.7);
+                          background-color: rgba(0, 0, 0, 0.5);
+                          padding: 8px 12px;
+                          border-radius: 4px;
+                        "
+                      >
+                        <span id="mesh-info">Loading mesh...</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 16px;
+                    margin-bottom: 2.5em;
+                  "
+                >
+                  <div style="line-height: 1.35; margin: 0; padding: 0">
+                    <div
+                      style="
+                        margin: 0;
+                        padding: 0;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                      "
+                    >
+                      <strong> TurboJet — Propulsion </strong>
+                      <span
+                        style="
+                          display: inline-block;
+                          background-color: #23a369;
+                          color: white;
+                          padding: 0.25em 0.5em;
+                          border-radius: 0.25em;
+                          font-size: 0.85em;
+                          margin-right: 0.5em;
+                        "
+                        >Ongoing</span
+                      >
+                    </div>
+                    <div style="margin: 0.2em 10 0 0; padding: 0">
+                      <strong>
+                        <span style="color: #b3a369">
+                          Georgia Institute of Technology
+                        </span>
+                      </strong>
+                    </div>
+                    <blockquote
+                      style="
+                        margin: 0.5em 0;
+                        padding-left: 1em;
+                        border-left: 3px solid rgb(55, 53, 47);
+                        font-size: 0.95rem;
+                      "
+                    >
+                      Designed a TurboJet Engine Based on Requirements Set for
+                      Intake, Compressor, Burner, Turbine, and Nozzle.
+                      <br />
+                      Developing General Aerospace Propulsion (GAP), a program
+                      for Turbomachinery and Performance Predictions.
+                      <br />
+                      Allocated Compute: PSC Bridges2 & Azure HB VMs.
+                    </blockquote>
+                    <div
+                      style="
+                        margin: 1.5em 0;
+                        display: flex;
+                        gap: 1em;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                      "
+                    >
+                      <img
+                        src="../../images/Jet Engine.png"
+                        alt="Jet Engine"
+                        style="
+                          max-width: 300px;
+                          height: auto;
+                          object-fit: contain;
+                          border-radius: 8px;
+                        "
+                      />
+                      <img
+                        src="../../images/Jet Thrust.png"
+                        alt="Jet Thrust"
+                        style="
+                          max-width: 300px;
+                          height: auto;
+                          object-fit: contain;
+                          border-radius: 8px;
+                        "
+                      />
+                    </div>
                   </div>
                 </div>
                 <div
@@ -726,8 +905,9 @@
                     >
                       Translated Geometry in Different Formats, and Calculated
                       Stagnation Heat Flux at Different Points Assuming Frozen
-                      BL with an Equilibrium Catalytic Wall. Estimated Heat
-                      Loads, Trajectory, and Proper TPS Sizing.
+                      BL with an Equilibrium Catalytic Wall.
+                      <br />
+                      Estimated Heat Loads, Trajectory, and Proper TPS Sizing.
                     </blockquote>
                     <div
                       style="
@@ -1037,45 +1217,6 @@
                         font-size: 1.05rem;
                       "
                     >
-                      <strong> TurboJet — Propulsion </strong>
-                    </div>
-                    <div style="margin: 0.2em 10 0 0; padding: 0">
-                      <strong>
-                        <span style="color: #b3a369">
-                          Georgia Institute of Technology
-                        </span>
-                      </strong>
-                    </div>
-                    <blockquote
-                      style="
-                        margin: 0.5em 0;
-                        padding-left: 1em;
-                        border-left: 3px solid rgb(55, 53, 47);
-                        font-size: 0.95rem;
-                      "
-                    >
-                      Designed a TurboJet Engine Based on Requirements Set for
-                      Intake, Compressor, Burner, Turbine, and Nozzle.
-                    </blockquote>
-                  </div>
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    align-items: flex-start;
-                    gap: 16px;
-                    margin-bottom: 2.5em;
-                  "
-                >
-                  <div style="line-height: 1.35; margin: 0; padding: 0">
-                    <div
-                      style="
-                        margin: 0;
-                        padding: 0;
-                        font-weight: 600;
-                        font-size: 1.05rem;
-                      "
-                    >
                       <strong>
                         Aerodynamic Estimations — Flight Dynamics
                       </strong>
@@ -1132,10 +1273,10 @@
                     >
                       FIFA World Cup, Atlanta 2026
                       <br />
-                      GT Special Events & Protocol 2022-2025
+                      GT Special Events & Protocol 2022-2026
                       <br />
                       Space Generation Advisory Council, Space Policy & Law PG
-                      2025
+                      2026
                       <br />
                       GT Student and Campus Event Centers 2022-2023
                       <br />
@@ -1217,7 +1358,7 @@
         </nav>
         <div class="flex items-center justify-between">
           <p class="text-sm text-neutral-500 dark:text-neutral-400">
-            © 2025 Mohammed S. Al-Mahrouqi
+            © 2026 Mohammed S. Al-Mahrouqi
           </p>
         </div>
         <script>
@@ -1298,5 +1439,6 @@
       </div>
     </div>
     <script type="module" src="./three-viewer.js"></script>
+    <script type="module" src="./mesh-viewer.js"></script>
   </body>
 </html>
