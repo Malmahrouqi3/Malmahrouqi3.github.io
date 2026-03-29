@@ -131,6 +131,184 @@
       .affiliation-logo {
         display: inline-block;
       }
+
+      .xp-timeline-title {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #8a8a8a;
+        margin-bottom: 18px;
+      }
+
+      .xp-timeline {
+        position: relative;
+        padding-left: 108px;
+        margin-top: 10px;
+        margin-bottom: 24px;
+      }
+
+      .xp-timeline::before {
+        content: "";
+        position: absolute;
+        left: 84px;
+        top: 8px;
+        bottom: 8px;
+        width: 1.5px;
+        background: #d4d4d4;
+      }
+
+      .xp-item {
+        position: relative;
+        margin-bottom: 14px;
+      }
+
+      .xp-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .xp-year {
+        position: absolute;
+        left: -108px;
+        width: 66px;
+        text-align: right;
+        top: 10px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #8a8a8a;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        line-height: 1.05;
+        gap: 2px;
+      }
+
+      .xp-year-end {
+        font-size: 10px;
+        font-weight: 500;
+        opacity: 0.65;
+      }
+
+      html.dark .xp-year-end {
+        opacity: 0.55;
+      }
+
+      @media (max-width: 640px) {
+        .xp-year-end {
+          font-size: 9px;
+        }
+      }
+
+      .xp-dot {
+        position: absolute;
+        left: -24px;
+        top: 14px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        background: #7a7a7a;
+      }
+
+      .xp-card {
+        border: 1px solid #e3e3e3;
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 12px 14px;
+        transition: opacity 0.15s ease;
+      }
+
+      .xp-card:hover {
+        opacity: 0.9;
+      }
+
+      .xp-title {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #2d2d2d;
+        margin-bottom: 2px;
+      }
+
+      .xp-sub {
+        font-size: 12px;
+        line-height: 1.45;
+        color: #6f6f6f;
+      }
+
+      html.dark .xp-timeline-title {
+        color: #9a9a9a;
+      }
+
+      html.dark .xp-timeline::before {
+        background: #464646;
+      }
+
+      html.dark .xp-year {
+        color: #a0a0a0;
+      }
+
+      html.dark .xp-dot {
+        background: #9a9a9a;
+      }
+
+      html.dark blockquote {
+        border-color: #404040;
+        background: #252525;
+        color: #e5e5e5;
+      }
+
+      .xp-involvements {
+        border: 1px solid #e3e3e3;
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin: 0.5em 0;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #2d2d2d;
+        border-left: 3px solid rgb(55, 53, 47);
+      }
+
+      html.dark .xp-involvements {
+        border-color: #404040;
+        background: #252525;
+        color: #e5e5e5;
+      }
+
+      html.dark .xp-card {
+        border-color: #404040;
+        background: #252525;
+      }
+
+      html.dark .xp-title {
+        color: #e5e5e5;
+      }
+
+      html.dark .xp-sub {
+        color: #b5b5b5;
+      }
+
+      @media (max-width: 640px) {
+        .xp-timeline {
+          padding-left: 82px;
+        }
+
+        .xp-timeline::before {
+          left: 58px;
+        }
+
+        .xp-year {
+          left: -82px;
+          width: 48px;
+          font-size: 10px;
+        }
+
+        .xp-dot {
+          left: -18px;
+        }
+      }
     </style>
   </head>
   <body
@@ -385,86 +563,303 @@
                     Rocket Propulsion, Advanced Aircraft Propulsion,
                     Differential Geometry, StatML, SciML, and many others.
                   </p>
+                  <p class="xp-timeline-title">Career Timeline</p>
 
-                  <h3 class="text-2xl font-semibold mb-2 mt-6 text-left">
-                    Current and Past Affiliations
-                  </h3>
-
-                  <div class="flex flex-wrap gap-6 items-center justify-center">
-                    <div class="relative group">
-                      <img
-                        src="/images/logos/rocketpy.png"
-                        alt="RocketPy"
-                        class="affiliation-logo"
-                        style="
-                          height: 100px;
-                          width: 100px;
-                          object-fit: contain;
-                          border-radius: 10px;
-                        "
-                      />
-                      <div
-                        class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
-                      >
-                        RocketPy
+                  <div class="xp-timeline">
+                    <div class="xp-item">
+                      <span class="xp-year"><span>2026</span></span>
+                      <div class="xp-dot"></div>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">RocketPy</div>
+                        <div class="xp-sub">
+                          Developer · January 2026–Present
+                        </div>
+                      </div>
+                    </div>
+                    <div class="xp-item">
+                      <span class="xp-year"><span>2025</span></span>
+                      <div class="xp-dot"></div>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">Computational Physics at GT</div>
+                        <div class="xp-sub">
+                          Undergraduate Researcher · May 2025–Dec 2025
+                        </div>
+                      </div>
+                    </div>
+                    <div class="xp-item">
+                      <span class="xp-year"><span>2025</span></span>
+                      <div class="xp-dot"></div>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">
+                          Space Generation Advisory Council (SGAC)
+                        </div>
+                        <div class="xp-sub">
+                          Space &amp; Law Policy Researcher · Jan 2025–July 2025
+                        </div>
                       </div>
                     </div>
 
-                    <div class="relative group">
-                      <img
-                        src="/images/logos/gt-logo.png"
-                        alt="Georgia Tech"
-                        class="affiliation-logo"
-                        style="
-                          height: 100px;
-                          width: 100px;
-                          object-fit: contain;
-                          border-radius: 10px;
-                        "
-                      />
-                      <div
-                        class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    <div class="xp-item">
+                      <span class="xp-year"
+                        ><span class="xp-year-end">2024</span
+                        ><span>2023</span></span
                       >
-                        Georgia Tech
+                      <div class="xp-dot"></div>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">
+                          Yellow Jackets Space Program (YJSP)
+                        </div>
+                        <div class="xp-sub">
+                          Flight Dynamics &amp; Structures Engineer · Aug
+                          2023–May 2024
+                        </div>
                       </div>
                     </div>
 
-                    <div class="relative group">
-                      <img
-                        src="/images/logos/comp-physics-gt.png"
-                        alt="Computational Physics at GT"
-                        class="affiliation-logo"
-                        style="
-                          height: 100px;
-                          width: 100px;
-                          object-fit: contain;
-                          border-radius: 10px;
-                        "
-                      />
-                      <div
-                        class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    <div class="xp-item">
+                      <span class="xp-year"
+                        ><span class="xp-year-end">2023</span
+                        ><span>2022</span></span
                       >
-                        Computational Physics at GT
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">
+                          Guest Services Manager at GT SCEC
+                        </div>
+                        <div class="xp-sub">
+                          Student Assistant · Aug 2022–Nov 2023
+                        </div>
                       </div>
                     </div>
 
-                    <div class="relative group">
-                      <img
-                        src="/images/logos/yjsp.png"
-                        alt="Yellow Jackets Space Program"
-                        class="affiliation-logo"
-                        style="
-                          height: 100px;
-                          width: 100px;
-                          object-fit: contain;
-                          border-radius: 10px;
-                        "
-                      />
-                      <div
-                        class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
-                      >
-                        Yellow Jackets Space Program
+                    <div class="xp-item">
+                      <span class="xp-year"><span>2022</span></span>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">
+                          School of Aerospace Engineering Student Advisory
+                          Council (SAESAC)
+                        </div>
+                        <div class="xp-sub">Officer · Aug 2022–Dec 2022</div>
                       </div>
+                    </div>
+                    <div class="xp-item">
+                      <span class="xp-year"
+                        ><span class="xp-year-end">2022</span
+                        ><span>2021</span></span
+                      >
+                      <div class="xp-dot"></div>
+                      <div class="xp-dot"></div>
+                      <div class="xp-card">
+                        <div class="xp-title">
+                          AIAA Southeastern Regional Student Conference (Region
+                          II)
+                        </div>
+                        <div class="xp-sub">
+                          Planning Committee Member · Nov 2021-April 2022
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="line-height: 1.35; margin: 0; padding: 0">
+                  <div
+                    style="
+                      margin: 0;
+                      padding: 0;
+                      font-weight: 600;
+                      font-size: 1.05rem;
+                    "
+                  >
+                    <p class="xp-timeline-title">Other Involvements</p>
+                  </div>
+                  <blockquote class="xp-involvements">
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>FIFA World Cup, Atlanta</span>
+                      <span>2026-Present</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>Hands On Atlanta, Volunteer with 150 hrs</span>
+                      <span>2022-Present</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>Dad's Garage Theatre Company</span>
+                      <span>2025-Present</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>GT Special Events & Protocol</span>
+                      <span>2022-2025</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>GT Boeing Forming Leaders in Technology (FLT)</span>
+                      <span>2024</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span
+                        >Regeneron International Science and Engineering Fair
+                        (ISEF)</span
+                      >
+                      <span>2022</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>Sickle Cell Foundation of Georgia, Inc.</span>
+                      <span>2022</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>NASA Lunar Lava Tube Challenge</span>
+                      <span>2022</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>NASA Big Idea Challenge</span>
+                      <span>2021</span>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                      "
+                    >
+                      <span>GSGC Space Day Atlanta</span>
+                      <span>2021,2022,2023</span>
+                    </div>
+                  </blockquote>
+                </div>
+                <p class="xp-timeline-title">Current and Past Affiliations</p>
+
+                <div class="flex flex-wrap gap-6 items-center justify-center">
+                  <div class="relative group">
+                    <img
+                      src="/images/logos/rocketpy.png"
+                      alt="RocketPy"
+                      class="affiliation-logo"
+                      style="
+                        height: 100px;
+                        width: 100px;
+                        object-fit: contain;
+                        border-radius: 10px;
+                      "
+                    />
+                    <div
+                      class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    >
+                      RocketPy
+                    </div>
+                  </div>
+
+                  <div class="relative group">
+                    <img
+                      src="/images/logos/gt-logo.png"
+                      alt="Georgia Tech"
+                      class="affiliation-logo"
+                      style="
+                        height: 100px;
+                        width: 100px;
+                        object-fit: contain;
+                        border-radius: 10px;
+                      "
+                    />
+                    <div
+                      class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    >
+                      Georgia Tech
+                    </div>
+                  </div>
+
+                  <div class="relative group">
+                    <img
+                      src="/images/logos/comp-physics-gt.png"
+                      alt="Computational Physics at GT"
+                      class="affiliation-logo"
+                      style="
+                        height: 100px;
+                        width: 100px;
+                        object-fit: contain;
+                        border-radius: 10px;
+                      "
+                    />
+                    <div
+                      class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    >
+                      Computational Physics at GT
+                    </div>
+                  </div>
+
+                  <div class="relative group">
+                    <img
+                      src="/images/logos/yjsp.png"
+                      alt="Yellow Jackets Space Program"
+                      class="affiliation-logo"
+                      style="
+                        height: 100px;
+                        width: 100px;
+                        object-fit: contain;
+                        border-radius: 10px;
+                      "
+                    />
+                    <div
+                      class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10"
+                    >
+                      Yellow Jackets Space Program
                     </div>
                   </div>
                 </div>
